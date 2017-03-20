@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>70</x>
+      <y>0</y>
+      <w>260</w>
+      <h>1170</h>
+    </coordinates>
+    <panel_attributes>You
+--
+-int calories
+-int vitaminH
+-int vitaminX
+-ArrayList&lt;GrowthArea&gt; growingAreas
+-ArrayList&lt;RepairArea&gt; repairAreas
+-ArrayList&lt;YouArea&gt; youAreas
+-caloriesPerCoverage
+-coveragePerSecond
+-coveragePerClick
+-caloriesPerDurability
+-durabilityPerSecond
+-durabilityPerClick
+-eatCaloriesPerSecond
+-eatVitaminHPerSecond
+-eatVitaminXPerSecond
+-digestCaloriesPerSecond
+-digestVitaminHPerSecond
+-digestVitaminXPerSecond
+-stomachCapacity
+-stomachCalories
+-stomachVitaminH
+-stomachVitaminX
+-upgradeCaloriesPerClick
+-upgradeVitaminHPerClick
+-upgradeVitaminXPerClick
+-heartUpgradeCalories
+-heartUpgradeVitaminH
+-heartUpgradeVitaminX
+-brainUpgradeCalories
+-brainUpgradeVitaminH
+-brainUpgradeVitaminX
+-pancreasUpgradeCalories
+-pancreasUpgradeVitaminH
+-pancreasUpgradeVitaminX
+-stomachUpgradeCalories
+-stomachUpgradeVitaminH
+-stomachUpgradeVitaminX
+-lungsUpgradeCalories
+-lungsUpgradeVitaminH
+-lungsUpgradeVitaminX
+-heartLevel
+-brainLevel
+-pancreaseLevel
+-stomachLevel
+-lungsLevel
+--
++addCalories(int): void
++addVitaminH(int): void
++addVitaminX(int): void
++useCalories(int): void
++useVitaminH(int): void
++useVitaminX(int): void
++getCalories(): int
++getVitaminH(): int
++getVitaminX(): int
++hasEnoughCalories(int): boolean
++hasEnoughVitaminH(int): boolean
++hasEnoughVitaminX(int): boolean
++startGrowingOn(Tile): void
++startRepairing(Tile): void
++finishGrowth(GrowthArea): void
++updateGrowing(): void
++finishRepair(RepairArea): void
++updateRepairing(): void
++updateEating(): void
++updateDigesting():void
++canGrowOn(Tile): boolean
++checkDurability(): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>380</x>
+      <y>520</y>
+      <w>210</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>Tile
+--
+-int calories
+-int vitaminH
+-int vitaminX
+-int coverage
+-BufferedImage sprite
+--
++reduceCalories(int): void
++reduceVitaminH(int): void
++reduceVitaminX(int): void
++hasCalories(): boolean
++hasVitaminH(): boolean
++hasVitaminX(): boolean
++getSprite(): BufferedImage
++setSprite(BufferedImage): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Text</type>
+    <coordinates>
+      <x>370</x>
+      <y>860</y>
+      <w>180</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>It might be a better idea
+to separate this
+stuff into separate organ
+classes</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>390</x>
+      <y>350</y>
+      <w>170</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>GrowthArea
+--
+-int coverage
+-Tile onTile
+--
++grow(int): void
++fullyCovered(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>390</x>
+      <y>200</y>
+      <w>180</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>RepairArea
+--
+-YouArea youArea
+--
++repair(int): void
++fullyRepaired(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>370</x>
+      <y>0</y>
+      <w>170</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>YouArea
+--
+-Tile onTile
+-int durability
+--
++getDurability(): int
++getTile(): Tile
++getHurt(int): void
++getRepaired(int): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>600</x>
+      <y>50</y>
+      <w>180</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>City
+--
+-Tile[][] tiles
+--
++getTile(int, int): Tile
++tileExists(int, int): boolean
++loadFrom(File file): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
